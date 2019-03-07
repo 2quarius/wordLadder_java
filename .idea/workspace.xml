@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4d4547a-3d3d-4515-a83f-8205c6ab705a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/wordLadder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d4d4547a-3d3d-4515-a83f-8205c6ab705a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wordLadder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -60,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/wordLadderTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -220,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551969112676" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551969496907" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -306,14 +302,11 @@
       <workItem from="1551856888153" duration="972000" />
       <workItem from="1551857896454" duration="3791000" />
       <workItem from="1551862969368" duration="3814000" />
-      <workItem from="1551960907721" duration="7887000" />
+      <workItem from="1551960907721" duration="8296000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="wordLadderTest_testMain - 2019.03.07 at 21h 55m 02s.xml">
-      <configuration name="wordLadderTest.testMain" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="wordLadderTest_testMain - 2019.03.07 at 21h 57m 26s.xml">
       <configuration name="wordLadderTest.testMain" configurationId="JUnit" />
     </history-entry>
@@ -341,12 +334,15 @@
     <history-entry file="wordLadderTest_testMain - 2019.03.07 at 22h 30m 34s.xml">
       <configuration name="wordLadderTest.testMain" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="wordLadderTest_testMain - 2019.03.07 at 22h 31m 18s.xml">
+      <configuration name="wordLadderTest.testMain" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16584000" />
+    <option name="totallyTimeSpent" value="16993000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="137" y="23" width="1400" height="837" extended-state="0" />
+    <frame x="137" y="23" width="1400" height="837" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26435935" />
@@ -398,6 +394,12 @@
           <line>19</line>
           <properties />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/wordLadderTest.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -477,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/wordLadderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wordLadder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -497,6 +489,16 @@
             <element signature="e#382#401#0" expanded="true" />
             <element signature="e#416#424#0" expanded="true" />
             <element signature="e#1491#1499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/wordLadderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
