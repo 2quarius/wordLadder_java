@@ -9,3 +9,16 @@ That word ladder, however, is not the shortest possible one. Although the words 
 &emsp;&emsp;code -> cade -> cate -> date -> data
 ### Implementation
 **My job in this problem is to write a program that finds a minimal word ladder between two words.** My code will make use of several of Java standard library, along with breadth-first search algorithm to find the shortest such sequence.
+### Guideline 
+Anyway, if you do not care about what I am talking about above, it does **not** matter. What I am talking about below is what really affects you.
+##### 1.git clone
+Open your favorite ternimal and choose a directory you like, such as:
+```
+>cd fairy/damnHomework
+```
+Then git clone this project:
+```
+>git clone https://github.com/2quarius/wordLadder_java.git
+```
+##### 2.others
+Explore yourselves, I am tired.

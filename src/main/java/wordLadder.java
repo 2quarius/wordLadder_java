@@ -10,7 +10,7 @@ public class wordLadder {
     public static void main(){
         wordLadder object = new wordLadder();
         read_english();
-//        input_words();
+        input_words();
         Queue<ArrayList<String>> ladderqueue = new LinkedList<ArrayList<String>>();
         ArrayList<String> ladders = new ArrayList<String>();
         ladders.add(object.start);
@@ -35,12 +35,10 @@ public class wordLadder {
                             ArrayList<String> copy = new ArrayList<String>(laddertmp);
                             copy.add(temp);
                             ((LinkedList<ArrayList<String>>) ladderqueue).add(copy);
-                            // laddertmp = ((LinkedList<ArrayList<String>>) ladderqueue).pop();
                             object.english.replace(temp,1,0);
                         }
                     }
                 }
-//                temp = temp.replace(temp.charAt(i),laddertmp.get(laddertmp.size()-1).charAt(i));
                 StringBuilder strBuilder = new StringBuilder(temp);
                 strBuilder.setCharAt(i,laddertmp.get(laddertmp.size()-1).charAt(i));
                 temp = strBuilder.toString();
@@ -53,10 +51,6 @@ public class wordLadder {
     }
     public static void read_english(){
         while (true){
-//            System.out.println("Please enter filename containing source text:");
-//            String file_name;
-//            Scanner sc = new Scanner(System.in);
-//            file_name = sc.next();
             try {
                 BufferedReader bf = new BufferedReader(new FileReader("/Users/sixplus/Downloads/lab2/WordLadder/EnglishWords.txt"));
                 String temp_word;

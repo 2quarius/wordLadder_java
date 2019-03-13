@@ -26,14 +26,18 @@ public void after() throws Exception {
 * 
 * Method: main(String[] args) 
 * 
-*/ 
-@Test
+*/
+public static void main(String[] args) throws Exception{
+    wordLadderTest test = new wordLadderTest();
+    test.testMain();
+}
 public void testMain() throws Exception { 
 //TODO: Test goes here...
     wordLadder object = new wordLadder();
-    object.start = "hello";
-    object.dest = "world";
+//    object.start = "hello";
+//    object.dest = "world";
     object.main();
+
 } 
 
 /** 
