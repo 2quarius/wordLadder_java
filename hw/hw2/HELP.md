@@ -4,6 +4,10 @@
 简单的注册、登录后进入`/wordladder`并将起始单词（start）和目标单词（dest）写入地址，例如:
 `/wordladder/hello/world`。
 即可获知hello->...->world的word ladder。
+### 技术栈
+- Spring Boot
+- Spring Security
+- Unit Test
 ### 使用步骤
 1、执行 `mvn spring-boot:run`
 
