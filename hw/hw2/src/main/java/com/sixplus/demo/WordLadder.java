@@ -1,17 +1,29 @@
+package com.sixplus.demo;
+/*
+如果将词典导入数据库，则新建一个名为Dictionary的类，
+利用application.yaml配置数据库，
+WordLadder类的english则换为Dictionary对象，
+doFind函数内部english的相应操作也应替换
+*/
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class wordLadder {
+public class WordLadder {
     public static Map<String, Integer> english = new HashMap<String, Integer>();
     public static String start, dest;
 
-    public static void main() {
-        wordLadder object = new wordLadder();
+    WordLadder(){}
+    public WordLadder(String start,String dest)
+    {
+        this.start = start;
+        this.dest = dest;
+    }
+    public static String doFind() {
+        WordLadder object = new WordLadder();
         read_english();
-        input_words();
         Queue<ArrayList<String>> ladderqueue = new LinkedList<ArrayList<String>>();
         ArrayList<String> ladders = new ArrayList<String>();
         ladders.add(object.start);
@@ -20,8 +32,7 @@ public class wordLadder {
         while (ladderqueue.size() != 0) {
             ArrayList<String> laddertmp = ladderqueue.element();
             if (laddertmp.get(laddertmp.size() - 1).equals(object.dest)) {
-                show_ans(laddertmp);
-                return;
+                return show_ans(laddertmp);
             }
             String temp = laddertmp.get(laddertmp.size() - 1);
             for (Integer i = 0; i < temp.length(); i++) {
@@ -45,8 +56,7 @@ public class wordLadder {
             ((LinkedList<ArrayList<String>>) ladderqueue).pop();
         }
 
-        System.out.println("No ladder\n");
-        return;
+        return "No Ladder\n";
     }
 
     public static void read_english() {
@@ -65,25 +75,15 @@ public class wordLadder {
         }
     }
 
-    public static void input_words() {
-        System.out.println("Enter start word (enter ':q' to quit):");
-        Scanner sc = new Scanner(System.in);
-        start = sc.next();
-        if (start == ":q") {
-            System.exit(0);
-        }
-        System.out.println("Enter destination word:");
-        dest = sc.next();
-    }
 
-    public static void show_ans(ArrayList<String> ans) {
-        System.out.print("Found ladder:");
-        System.out.print(ans.get(0));
-        for (Integer i = 1; i < ans.size(); i++) {
-            System.out.print("->");
-            System.out.print(ans.get(i));
+    public static String show_ans(ArrayList<String> ans) {
+        StringBuilder answer = new StringBuilder("Found Ladder:");
+        answer.append(ans.get(0));
+        for(Integer i = 1; i < ans.size(); i++){
+            answer.append("->");
+            answer.append(ans.get(i));
         }
-        System.out.println();
-        System.out.println();
+        answer.append("\n");
+        return answer.toString();
     }
 }
