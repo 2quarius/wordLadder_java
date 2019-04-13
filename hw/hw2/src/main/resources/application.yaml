@@ -10,3 +10,18 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+management:
+  server:
+    servlet:
+      context-path: "/actuator"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/management"
+  endpoint:
+    shutdown:
+      enabled: false
+info:
+  app:
+    name: "wordladder"

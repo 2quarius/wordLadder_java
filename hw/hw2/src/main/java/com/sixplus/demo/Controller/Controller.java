@@ -7,6 +7,7 @@ import com.sixplus.demo.Service.Impl.BaseUserService;
 import com.sixplus.demo.Service.UserService;
 import com.sixplus.demo.WordLadder;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -17,6 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Controller {
     private UserService userService;
     private final AtomicLong counter = new AtomicLong();
+
 
     @GetMapping(value = "/register")
     public String register(){
