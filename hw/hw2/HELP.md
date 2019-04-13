@@ -110,3 +110,128 @@ curl -X GET http://localhost:8080/logout
 # 结果
 {"code":"0","message":"success","result":"退出成功"}
 ```
+7、【已登录】调用actuator监控信息
+```$xslt
+curl -v -X GET \
+  http://localhost:8080/management \
+  -H 'Cookie: JSESSIONID=8E46D6D03DA11D89FE507F2F2462A21E'
+  
+#结果
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+> GET /management HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+> Cookie: JSESSIONID=B84AE0C87D78D272AC2F07AED029FADF
+>
+< HTTP/1.1 200
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/vnd.spring-boot.actuator.v2+json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Sat, 13 Apr 2019 14:21:09 GMT
+<
+* Connection #0 to host localhost left intact
+{"_links":{"self":{"href":"http://localhost:8080/management","templated":false},"auditevents":{"href":"http://localhost:8080/management/auditevents","templated":false},"beans":{"href":"http://localhost:8080/management/beans","templated":false},"caches-cache":{"href":"http://localhost:8080/management/caches/{cache}","templated":true},"caches":{"href":"http://localhost:8080/management/caches","templated":false},"health":{"href":"http://localhost:8080/management/health","templated":false},"health-component":{"href":"http://localhost:8080/management/health/{component}","templated":true},"health-component-instance":{"href":"http://localhost:8080/management/health/{component}/{instance}","templated":true},"conditions":{"href":"http://localhost:8080/management/conditions","templated":false},"configprops":{"href":"http://localhost:8080/management/configprops","templated":false},"env":{"href":"http://localhost:8080/management/env","templated":false},"env-toMatch":{"href":"http://localhost:8080/management/env/{toMatch}","templated":true},"info":{"href":"http://localhost:8080/management/info","templated":false},"loggers":{"href":"http://localhost:8080/management/loggers","templated":false},"loggers-name":{"href":"http://localhost:8080/management/loggers/{name}","templated":true},"heapdump":{"href":"http://localhost:8080/management/heapdump","templated":false},"threaddump":{"href":"http://localhost:8080/management/threaddump","templated":false},"metrics":{"href":"http://localhost:8080/management/metrics","templated":false},"metrics-requiredMetricName":{"href":"http://localhost:8080/management/metrics/{requiredMetricName}","templated":true},"scheduledtasks":{"href":"http://localhost:8080/management/scheduledtasks","templated":false},"httptrace":{"href":"http://localhost:8080/management/httptrace","templated":false},"mappings":{"href":"http://localhost:8080/management/mappings","templated":false}}}%
+```
+- 格式化结果
+```
+ {
+  	"_links": {
+  		"self": {
+  			"href": "http://localhost:8080/management",
+  			"templated": false
+  		},
+  		"auditevents": {
+  			"href": "http://localhost:8080/management/auditevents",
+  			"templated": false
+  		},
+  		"beans": {
+  			"href": "http://localhost:8080/management/beans",
+  			"templated": false
+  		},
+  		"caches-cache": {
+  			"href": "http://localhost:8080/management/caches/{cache}",
+  			"templated": true
+  		},
+  		"caches": {
+  			"href": "http://localhost:8080/management/caches",
+  			"templated": false
+  		},
+  		"health": {
+  			"href": "http://localhost:8080/management/health",
+  			"templated": false
+  		},
+  		"health-component": {
+  			"href": "http://localhost:8080/management/health/{component}",
+  			"templated": true
+  		},
+  		"health-component-instance": {
+  			"href": "http://localhost:8080/management/health/{component}/{instance}",
+  			"templated": true
+  		},
+  		"conditions": {
+  			"href": "http://localhost:8080/management/conditions",
+  			"templated": false
+  		},
+  		"configprops": {
+  			"href": "http://localhost:8080/management/configprops",
+  			"templated": false
+  		},
+  		"env": {
+  			"href": "http://localhost:8080/management/env",
+  			"templated": false
+  		},
+  		"env-toMatch": {
+  			"href": "http://localhost:8080/management/env/{toMatch}",
+  			"templated": true
+  		},
+  		"info": {
+  			"href": "http://localhost:8080/management/info",
+  			"templated": false
+  		},
+  		"loggers": {
+  			"href": "http://localhost:8080/management/loggers",
+  			"templated": false
+  		},
+  		"loggers-name": {
+  			"href": "http://localhost:8080/management/loggers/{name}",
+  			"templated": true
+  		},
+  		"heapdump": {
+  			"href": "http://localhost:8080/management/heapdump",
+  			"templated": false
+  		},
+  		"threaddump": {
+  			"href": "http://localhost:8080/management/threaddump",
+  			"templated": false
+  		},
+  		"metrics": {
+  			"href": "http://localhost:8080/management/metrics",
+  			"templated": false
+  		},
+  		"metrics-requiredMetricName": {
+  			"href": "http://localhost:8080/management/metrics/{requiredMetricName}",
+  			"templated": true
+  		},
+  		"scheduledtasks": {
+  			"href": "http://localhost:8080/management/scheduledtasks",
+  			"templated": false
+  		},
+  		"httptrace": {
+  			"href": "http://localhost:8080/management/httptrace",
+  			"templated": false
+  		},
+  		"mappings": {
+  			"href": "http://localhost:8080/management/mappings",
+  			"templated": false
+  		}
+  	}
+  } %
+```

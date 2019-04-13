@@ -41,6 +41,9 @@ public class CustomJSONLoginFilter extends AbstractAuthenticationProcessingFilte
         validateUsernameAndPassword(username,password);
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
         simpleGrantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+        if (username.equals("ruirui")){
+            simpleGrantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
+        }
         return new UsernamePasswordAuthenticationToken(username,password,simpleGrantedAuthorities);
     }
 
