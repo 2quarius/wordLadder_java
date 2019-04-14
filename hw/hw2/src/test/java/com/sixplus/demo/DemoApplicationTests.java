@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,6 +20,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.junit.matchers.JUnitMatchers;
+
+import javax.servlet.http.Cookie;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 
@@ -106,6 +109,23 @@ public class DemoApplicationTests {
 
         Assert.assertEquals(200,status3);
         Assert.assertThat(resp3, CoreMatchers.containsString("No Ladder"));
-
+    }
+    @Test
+    public void testActuator() throws Exception
+    {
+        //测试未登录时/management的访问权限
+        MvcResult mvcResult2 = mockMvc
+                .perform(MockMvcRequestBuilders.get("/management")
+                )
+                .andReturn();
+        int status2 = mvcResult2.getResponse().getStatus();
+        Assert.assertEquals(HttpStatus.UNAUTHORIZED.value(),status2);
+        //测试shutdown
+        MvcResult mvcResult3 = mockMvc
+                .perform(MockMvcRequestBuilders.get("/management/shutdown")
+                )
+                .andReturn();
+        int status3 = mvcResult3.getResponse().getStatus();
+        Assert.assertEquals(HttpStatus.NOT_FOUND.value(),status3);
     }
 }
