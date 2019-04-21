@@ -18,7 +18,9 @@
 - 随着时间延长，内存使用增加（在编辑完`when there is no request`部分后，内存已变为`1.39GB`）
 ### when requests increase
  [ab - Apache HTTP server benchmarking tool](http://httpd.apache.org/docs/2.2/programs/ab.html)
+
  [外部请求不断增加时cpu占用率和内存使用情况](./inrequests.mov)
+
 > 请求序列：
 ```aidl
 ab -n 10 -c 3 -A ruirui:renrui http://localhost:8080/login
