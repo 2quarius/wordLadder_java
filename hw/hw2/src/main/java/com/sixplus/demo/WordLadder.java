@@ -6,7 +6,6 @@ WordLadder类的english则换为Dictionary对象，
 doFind函数内部english的相应操作也应替换
 */
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -62,7 +61,7 @@ public class WordLadder {
     public static void read_english() {
         while (true) {
             try {
-                BufferedReader bf = new BufferedReader(new FileReader("/Users/sixplus/Downloads/lab2/WordLadder/EnglishWords.txt"));
+                BufferedReader bf = new BufferedReader(new FileReader("/EnglishWords.txt"));
                 String temp_word;
                 while ((temp_word = bf.readLine()) != null) {
                     english.put(temp_word, 1);
