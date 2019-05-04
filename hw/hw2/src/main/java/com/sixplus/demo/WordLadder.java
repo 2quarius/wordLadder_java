@@ -70,7 +70,6 @@ public class WordLadder {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
