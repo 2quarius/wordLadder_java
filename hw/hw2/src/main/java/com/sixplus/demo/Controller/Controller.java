@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.sixplus.demo.Bean.WebResponse;
 import com.sixplus.demo.Entity.User;
-//import com.sixplus.demo.JWT.CustomJWT;
+import com.sixplus.demo.JWT.CustomJWT;
 import com.sixplus.demo.Repository.UserRepository;
 import com.sixplus.demo.Response;
 import com.sixplus.demo.Service.Impl.BaseUserService;
@@ -12,8 +12,6 @@ import com.sixplus.demo.Service.UserService;
 import com.sixplus.demo.WordLadder;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationServiceException;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,9 +47,9 @@ public class Controller {
         String username = requestBody.getString("username");
         String password = requestBody.getString("password");
         if (userRepository.findByUsername(username) != null && userRepository.findByUsername(username).getPassword().equals(password)) {
-//            String token = CustomJWT.generateToken(username);
+            String token = CustomJWT.generateToken(username);
             JSONObject body = new JSONObject();
-//            body.put("token",token);
+            body.put("token",token);
             return WebResponse.success(body);
         }
         return WebResponse.success("invalid user");
@@ -64,7 +62,7 @@ public class Controller {
         Response response = new Response(counter.incrementAndGet(),start,dest,wordLadder.doFind());
         return response;
     }
-    private JSONObject getRequestBody(HttpServletRequest request) throws AuthenticationException {
+    private JSONObject getRequestBody(HttpServletRequest request){
         try{
             StringBuilder stringBuilder = new StringBuilder();
             InputStream inputStream = request.getInputStream();
@@ -76,8 +74,8 @@ public class Controller {
             return JSON.parseObject(stringBuilder.toString());
         }catch (IOException e){
             System.out.println(e.getMessage());
+            return new JSONObject();
         }
-        throw new AuthenticationServiceException("invalid request body");
     }
 
 }
